@@ -1,24 +1,7 @@
 import 'package:flutter/material.dart';
 import 'driverMain.dart';
-import 'userMain.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'PutraGo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: landingMain(),
-    );
-  }
-}
-
-class landingMain extends StatelessWidget {
+class userMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +14,7 @@ class landingMain extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Make daily trips',
+                'Share the ride',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 27,
@@ -44,7 +27,7 @@ class landingMain extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Maximize earnings',
+                'Split the fare',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 27,
@@ -68,10 +51,6 @@ class landingMain extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   // Handle login button press
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => userMain()),
-                  );
                 },
                 child: Text(
                   'Login',
@@ -122,8 +101,7 @@ class landingMain extends StatelessWidget {
             TextButton(
               onPressed: () {
                 // Handle login as a driver button press
-                Navigator.push(
-                  context,
+                Navigator.push(                  context,
                   MaterialPageRoute(builder: (context) => driverMain()),
                 );
               },
@@ -144,4 +122,3 @@ class landingMain extends StatelessWidget {
     );
   }
 }
-

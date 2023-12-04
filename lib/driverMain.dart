@@ -1,24 +1,7 @@
 import 'package:flutter/material.dart';
-import 'driverMain.dart';
 import 'userMain.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'PutraGo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: landingMain(),
-    );
-  }
-}
-
-class landingMain extends StatelessWidget {
+class driverMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,10 +51,6 @@ class landingMain extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   // Handle login button press
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => userMain()),
-                  );
                 },
                 child: Text(
                   'Login',
@@ -121,14 +100,14 @@ class landingMain extends StatelessWidget {
             SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                // Handle login as a driver button press
+                // Handle login as a user button press
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => driverMain()),
+                  MaterialPageRoute(builder: (context) => userMain()),
                 );
               },
               child: Text(
-                'Login as a Driver',
+                'Login as a User',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 17,
@@ -144,4 +123,3 @@ class landingMain extends StatelessWidget {
     );
   }
 }
-
