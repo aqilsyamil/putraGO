@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'driverMain.dart';
+import '../user/userMain.dart';
 
-class userMain extends StatelessWidget {
+class driverMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -14,7 +15,7 @@ class userMain extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Share the ride',
+                'Make daily trips',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 27,
@@ -27,7 +28,7 @@ class userMain extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Split the fare',
+                'Maximize earnings',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 27,
@@ -100,13 +101,14 @@ class userMain extends StatelessWidget {
             SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                // Handle login as a driver button press
-                Navigator.push(                  context,
-                  MaterialPageRoute(builder: (context) => driverMain()),
+                // Handle login as a user button press
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => userMain()),
                 );
               },
               child: Text(
-                'Login as a Driver',
+                'Login as a User',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 17,

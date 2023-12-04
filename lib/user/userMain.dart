@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'userMain.dart';
+import '../driver/driverMain.dart';
+import 'userLogin.dart';
+import 'userRegister.dart';
 
-class driverMain extends StatelessWidget {
+class userMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -14,7 +17,7 @@ class driverMain extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Make daily trips',
+                'Share the ride',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 27,
@@ -27,7 +30,7 @@ class driverMain extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Maximize earnings',
+                'Split the fare',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 27,
@@ -51,6 +54,10 @@ class driverMain extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   // Handle login button press
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => userLogin()),
+                  );
                 },
                 child: Text(
                   'Login',
@@ -75,6 +82,10 @@ class driverMain extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   // Handle register button press
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => userRegister()),
+                  );
                 },
                 child: Text(
                   'Register',
@@ -100,14 +111,13 @@ class driverMain extends StatelessWidget {
             SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                // Handle login as a user button press
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => userMain()),
+                // Handle login as a driver button press
+                Navigator.push(                  context,
+                  MaterialPageRoute(builder: (context) => driverMain()),
                 );
               },
               child: Text(
-                'Login as a User',
+                'Login as a Driver',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 17,
